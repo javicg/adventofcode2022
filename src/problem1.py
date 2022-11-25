@@ -1,11 +1,10 @@
 from csv import reader
 
-INPUT_FILE = "resources/problem1.csv"
 
-if __name__ == '__main__':
+def solve(input_file: str) -> str:
     # Read input
     cache = {}
-    with open(INPUT_FILE, 'r') as read_obj:
+    with open(input_file, 'r') as read_obj:
         csv_reader = reader(read_obj)
         for row in csv_reader:
             cache[row[0]] = row[1]
@@ -13,4 +12,8 @@ if __name__ == '__main__':
     # Process input
 
     # Print output
-    print(cache['5'])
+    return cache['5']
+
+
+if __name__ == '__main__':
+    print(solve("resources/problem1.csv"))
